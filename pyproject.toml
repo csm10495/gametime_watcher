@@ -1,0 +1,49 @@
+[project]
+name = "gametime_watcher"
+description = "A dependency-free tool to list Gametime ticket prices and alert on price drops"
+dynamic = ["version"]
+authors = [{name = "Charles Machalow", email = "csm10495@gmail.com"}]
+license = {file = "LICENSE.md"}
+classifiers = [
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Operating System :: POSIX",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest"
+]
+
+[project.urls]
+homepage = "https://github.com/csm10495/gametime_watcher"
+repository = "https://github.com/csm10495/gametime_watcher"
+documentation  = "https://csm10495.github.io/gametime_watcher"
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+
+[project.scripts]
+gametime_watcher = "gametime_watcher.cli:main"
+
+[tool.setuptools]
+packages = ["gametime_watcher"]
+include-package-data = true
+
+[tool.setuptools.dynamic]
+version = {attr = "gametime_watcher.__version__"}
+
+[tool.pytest.ini_options]
+pythonpath = [
+    "."
+]
+
+[build-system]
+requires = ["setuptools>=61.2"]
+build-backend = "setuptools.build_meta"
