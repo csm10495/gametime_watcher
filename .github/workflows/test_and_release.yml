@@ -29,6 +29,8 @@ jobs:
     with:
       python-version: '3.11'
     secrets: inherit
+    permissions:
+      id-token: write
 
   github-release:
     needs: pypi-upload
