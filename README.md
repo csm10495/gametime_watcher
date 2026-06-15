@@ -43,6 +43,23 @@ page HTML. This tool:
 > be respectful with polling intervals (the default is 5 minutes) and check
 > Gametime's Terms of Service. Page structure may change over time.
 
+## Install
+
+Install from [PyPI](https://pypi.org/project/gametime-watcher/) with pip:
+
+```bash
+pip install gametime-watcher
+```
+
+This installs a `gametime_watcher` console script, so you can run it directly:
+
+```bash
+gametime_watcher --help
+```
+
+Every `python -m gametime_watcher …` example below also works as
+`gametime_watcher …` once installed.
+
 ## Usage
 
 ### Scan all games for a team (search + filter in one command)
