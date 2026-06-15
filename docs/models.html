@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>gametime_watcher.models API documentation</title>
+<meta name="description" content="Data models for Gametime listings.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>gametime_watcher.models</code></h1>
+</header>
+<section id="section-intro">
+<p>Data models for Gametime listings.</p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="gametime_watcher.models.Event"><code class="flex name class">
+<span>class <span class="ident">Event</span></span>
+<span>(</span><span>id: str,<br>name: Optional[str] = None,<br>datetime_local: Optional[str] = None,<br>venue_id: Optional[str] = None,<br>extra: dict = &lt;factory&gt;)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class Event:
+    &#34;&#34;&#34;Lightweight metadata about an event.&#34;&#34;&#34;
+
+    id: str
+    name: Optional[str] = None
+    datetime_local: Optional[str] = None
+    venue_id: Optional[str] = None
+    extra: dict = field(default_factory=dict)
+
+    def to_dict(self) -&gt; dict:
+        return {
+            &#34;id&#34;: self.id,
+            &#34;name&#34;: self.name,
+            &#34;datetime_local&#34;: self.datetime_local,
+            &#34;venue_id&#34;: self.venue_id,
+        }</code></pre>
+</details>
+<div class="desc"><p>Lightweight metadata about an event.</p></div>
+<h3>Instance variables</h3>
+<dl>
+<dt id="gametime_watcher.models.Event.datetime_local"><code class="name">var <span class="ident">datetime_local</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.models.Event.extra"><code class="name">var <span class="ident">extra</span> : dict</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.models.Event.id"><code class="name">var <span class="ident">id</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.models.Event.name"><code class="name">var <span class="ident">name</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.models.Event.venue_id"><code class="name">var <span class="ident">venue_id</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="gametime_watcher.models.Event.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self) ‑> dict</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def to_dict(self) -&gt; dict:
+    return {
+        &#34;id&#34;: self.id,
+        &#34;name&#34;: self.name,
+        &#34;datetime_local&#34;: self.datetime_local,
+        &#34;venue_id&#34;: self.venue_id,
+    }</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="gametime_watcher.models.Listing"><code class="flex name class">
+<span>class <span class="ident">Listing</span></span>
+<span>(</span><span>id: str,<br>section: str,<br>section_group: Optional[str],<br>row: Optional[str],<br>seats: List[str],<br>available_lots: List[int],<br>price_total: int,<br>face_value: Optional[int],<br>event_id: Optional[str] = None,<br>url: Optional[str] = None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass(frozen=True)
+class Listing:
+    &#34;&#34;&#34;A single resale ticket listing for an event.
+
+    Prices are stored in whole cents (as Gametime returns them). ``price_total``
+    is the *all-in price per ticket* (what the buyer pays for one seat,
+    including fees), matching the price shown on gametime.co.
+    &#34;&#34;&#34;
+
+    id: str
+    section: str
+    section_group: Optional[str]
+    row: Optional[str]
+    seats: List[str]
+    # Group sizes that can be purchased, e.g. [2, 4] means you may buy 2 or 4.
+    available_lots: List[int]
+    price_total: int  # all-in price per ticket, in cents
+    face_value: Optional[int]  # in cents, if known
+    event_id: Optional[str] = None
+    url: Optional[str] = None
+
+    @property
+    def price_total_dollars(self) -&gt; float:
+        &#34;&#34;&#34;All-in per-ticket price in dollars.&#34;&#34;&#34;
+        return self.price_total / 100.0
+
+    @property
+    def face_value_dollars(self) -&gt; Optional[float]:
+        if self.face_value is None:
+            return None
+        return self.face_value / 100.0
+
+    @property
+    def section_is_numeric(self) -&gt; bool:
+        return self.section.isdigit()
+
+    @property
+    def section_number(self) -&gt; Optional[int]:
+        return int(self.section) if self.section.isdigit() else None
+
+    def can_buy(self, quantity: int, allow_larger: bool = False) -&gt; bool:
+        &#34;&#34;&#34;Whether ``quantity`` seats can be purchased from this listing.
+
+        By default Gametime only lets you buy one of the exact offered lot
+        sizes, so this checks membership in ``available_lots``. With
+        ``allow_larger`` it also accepts any offered lot larger than the
+        requested quantity.
+        &#34;&#34;&#34;
+        if quantity in self.available_lots:
+            return True
+        if allow_larger and any(lot &gt;= quantity for lot in self.available_lots):
+            return True
+        return False
+
+    def to_dict(self) -&gt; dict:
+        return {
+            &#34;id&#34;: self.id,
+            &#34;section&#34;: self.section,
+            &#34;section_group&#34;: self.section_group,
+            &#34;row&#34;: self.row,
+            &#34;seats&#34;: self.seats,
+            &#34;available_lots&#34;: self.available_lots,
+            &#34;price_total_cents&#34;: self.price_total,
+            &#34;price_total_dollars&#34;: round(self.price_total_dollars, 2),
+            &#34;face_value_cents&#34;: self.face_value,
+            &#34;event_id&#34;: self.event_id,
+            &#34;url&#34;: self.url,
+        }</code></pre>
+</details>
+<div class="desc"><p>A single resale ticket listing for an event.</p>
+<p>Prices are stored in whole cents (as Gametime returns them). <code>price_total</code>
+is the <em>all-in price per ticket</em> (what the buyer pays for one seat,
+including fees), matching the price shown on gametime.co.</p></div>
+<h3>Instance variables</h3>
+<dl>
+<dt id="gametime_watcher.models.Listing.available_lots"><code class="name">var <span class="ident">available_lots</span> : List[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.models.Listing.event_id"><code class="name">var <span class="ident">event_id</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.models.Listing.face_value"><code class="name">var <span class="ident">face_value</span> : int | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.models.Listing.face_value_dollars"><code class="name">prop <span class="ident">face_value_dollars</span> : Optional[float]</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def face_value_dollars(self) -&gt; Optional[float]:
+    if self.face_value is None:
+        return None
+    return self.face_value / 100.0</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.models.Listing.id"><code class="name">var <span class="ident">id</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.models.Listing.price_total"><code class="name">var <span class="ident">price_total</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.models.Listing.price_total_dollars"><code class="name">prop <span class="ident">price_total_dollars</span> : float</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def price_total_dollars(self) -&gt; float:
+    &#34;&#34;&#34;All-in per-ticket price in dollars.&#34;&#34;&#34;
+    return self.price_total / 100.0</code></pre>
+</details>
+<div class="desc"><p>All-in per-ticket price in dollars.</p></div>
+</dd>
+<dt id="gametime_watcher.models.Listing.row"><code class="name">var <span class="ident">row</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.models.Listing.seats"><code class="name">var <span class="ident">seats</span> : List[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.models.Listing.section"><code class="name">var <span class="ident">section</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.models.Listing.section_group"><code class="name">var <span class="ident">section_group</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.models.Listing.section_is_numeric"><code class="name">prop <span class="ident">section_is_numeric</span> : bool</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def section_is_numeric(self) -&gt; bool:
+    return self.section.isdigit()</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.models.Listing.section_number"><code class="name">prop <span class="ident">section_number</span> : Optional[int]</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def section_number(self) -&gt; Optional[int]:
+    return int(self.section) if self.section.isdigit() else None</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.models.Listing.url"><code class="name">var <span class="ident">url</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="gametime_watcher.models.Listing.can_buy"><code class="name flex">
+<span>def <span class="ident">can_buy</span></span>(<span>self, quantity: int, allow_larger: bool = False) ‑> bool</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def can_buy(self, quantity: int, allow_larger: bool = False) -&gt; bool:
+    &#34;&#34;&#34;Whether ``quantity`` seats can be purchased from this listing.
+
+    By default Gametime only lets you buy one of the exact offered lot
+    sizes, so this checks membership in ``available_lots``. With
+    ``allow_larger`` it also accepts any offered lot larger than the
+    requested quantity.
+    &#34;&#34;&#34;
+    if quantity in self.available_lots:
+        return True
+    if allow_larger and any(lot &gt;= quantity for lot in self.available_lots):
+        return True
+    return False</code></pre>
+</details>
+<div class="desc"><p>Whether <code>quantity</code> seats can be purchased from this listing.</p>
+<p>By default Gametime only lets you buy one of the exact offered lot
+sizes, so this checks membership in <code>available_lots</code>. With
+<code>allow_larger</code> it also accepts any offered lot larger than the
+requested quantity.</p></div>
+</dd>
+<dt id="gametime_watcher.models.Listing.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self) ‑> dict</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def to_dict(self) -&gt; dict:
+    return {
+        &#34;id&#34;: self.id,
+        &#34;section&#34;: self.section,
+        &#34;section_group&#34;: self.section_group,
+        &#34;row&#34;: self.row,
+        &#34;seats&#34;: self.seats,
+        &#34;available_lots&#34;: self.available_lots,
+        &#34;price_total_cents&#34;: self.price_total,
+        &#34;price_total_dollars&#34;: round(self.price_total_dollars, 2),
+        &#34;face_value_cents&#34;: self.face_value,
+        &#34;event_id&#34;: self.event_id,
+        &#34;url&#34;: self.url,
+    }</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="gametime_watcher" href="index.html">gametime_watcher</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="gametime_watcher.models.Event" href="#gametime_watcher.models.Event">Event</a></code></h4>
+<ul class="two-column">
+<li><code><a title="gametime_watcher.models.Event.datetime_local" href="#gametime_watcher.models.Event.datetime_local">datetime_local</a></code></li>
+<li><code><a title="gametime_watcher.models.Event.extra" href="#gametime_watcher.models.Event.extra">extra</a></code></li>
+<li><code><a title="gametime_watcher.models.Event.id" href="#gametime_watcher.models.Event.id">id</a></code></li>
+<li><code><a title="gametime_watcher.models.Event.name" href="#gametime_watcher.models.Event.name">name</a></code></li>
+<li><code><a title="gametime_watcher.models.Event.to_dict" href="#gametime_watcher.models.Event.to_dict">to_dict</a></code></li>
+<li><code><a title="gametime_watcher.models.Event.venue_id" href="#gametime_watcher.models.Event.venue_id">venue_id</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="gametime_watcher.models.Listing" href="#gametime_watcher.models.Listing">Listing</a></code></h4>
+<ul class="two-column">
+<li><code><a title="gametime_watcher.models.Listing.available_lots" href="#gametime_watcher.models.Listing.available_lots">available_lots</a></code></li>
+<li><code><a title="gametime_watcher.models.Listing.can_buy" href="#gametime_watcher.models.Listing.can_buy">can_buy</a></code></li>
+<li><code><a title="gametime_watcher.models.Listing.event_id" href="#gametime_watcher.models.Listing.event_id">event_id</a></code></li>
+<li><code><a title="gametime_watcher.models.Listing.face_value" href="#gametime_watcher.models.Listing.face_value">face_value</a></code></li>
+<li><code><a title="gametime_watcher.models.Listing.face_value_dollars" href="#gametime_watcher.models.Listing.face_value_dollars">face_value_dollars</a></code></li>
+<li><code><a title="gametime_watcher.models.Listing.id" href="#gametime_watcher.models.Listing.id">id</a></code></li>
+<li><code><a title="gametime_watcher.models.Listing.price_total" href="#gametime_watcher.models.Listing.price_total">price_total</a></code></li>
+<li><code><a title="gametime_watcher.models.Listing.price_total_dollars" href="#gametime_watcher.models.Listing.price_total_dollars">price_total_dollars</a></code></li>
+<li><code><a title="gametime_watcher.models.Listing.row" href="#gametime_watcher.models.Listing.row">row</a></code></li>
+<li><code><a title="gametime_watcher.models.Listing.seats" href="#gametime_watcher.models.Listing.seats">seats</a></code></li>
+<li><code><a title="gametime_watcher.models.Listing.section" href="#gametime_watcher.models.Listing.section">section</a></code></li>
+<li><code><a title="gametime_watcher.models.Listing.section_group" href="#gametime_watcher.models.Listing.section_group">section_group</a></code></li>
+<li><code><a title="gametime_watcher.models.Listing.section_is_numeric" href="#gametime_watcher.models.Listing.section_is_numeric">section_is_numeric</a></code></li>
+<li><code><a title="gametime_watcher.models.Listing.section_number" href="#gametime_watcher.models.Listing.section_number">section_number</a></code></li>
+<li><code><a title="gametime_watcher.models.Listing.to_dict" href="#gametime_watcher.models.Listing.to_dict">to_dict</a></code></li>
+<li><code><a title="gametime_watcher.models.Listing.url" href="#gametime_watcher.models.Listing.url">url</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

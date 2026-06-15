@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>gametime_watcher.filters API documentation</title>
+<meta name="description" content="Filtering of listings by section, price, and quantity.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>gametime_watcher.filters</code></h1>
+</header>
+<section id="section-intro">
+<p>Filtering of listings by section, price, and quantity.</p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="gametime_watcher.filters.filter_listings"><code class="name flex">
+<span>def <span class="ident">filter_listings</span></span>(<span>listings: Iterable[Listing],<br>*,<br>sections: Union[str, Sequence[str], <a title="gametime_watcher.filters.SectionMatcher" href="#gametime_watcher.filters.SectionMatcher">SectionMatcher</a>, None] = None,<br>max_price_dollars: Optional[float] = None,<br>quantity: Optional[int] = None,<br>allow_larger: bool = False) ‑> List[<a title="gametime_watcher.models.Listing" href="models.html#gametime_watcher.models.Listing">Listing</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def filter_listings(
+    listings: Iterable[Listing],
+    *,
+    sections: Union[str, Sequence[str], SectionMatcher, None] = None,
+    max_price_dollars: Optional[float] = None,
+    quantity: Optional[int] = None,
+    allow_larger: bool = False,
+) -&gt; List[Listing]:
+    &#34;&#34;&#34;Return listings matching all provided criteria, cheapest first.
+
+    Args:
+        sections: section spec (see :class:`SectionMatcher`) or a matcher.
+        max_price_dollars: maximum all-in price *per ticket*, in dollars.
+        quantity: number of seats you want to buy together; only listings that
+            offer this lot size are kept (see :meth:`Listing.can_buy`).
+        allow_larger: if True, also keep listings offering a larger lot.
+    &#34;&#34;&#34;
+    matcher = sections if isinstance(sections, SectionMatcher) else SectionMatcher.parse(sections)
+
+    result = []
+    for listing in listings:
+        if not matcher.matches(listing):
+            continue
+        if max_price_dollars is not None and listing.price_total_dollars &gt; max_price_dollars:
+            continue
+        if quantity is not None and not listing.can_buy(quantity, allow_larger=allow_larger):
+            continue
+        result.append(listing)
+
+    result.sort(key=lambda listing: (listing.price_total, listing.section, listing.row or &#34;&#34;))
+    return result</code></pre>
+</details>
+<div class="desc"><p>Return listings matching all provided criteria, cheapest first.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>sections</code></strong></dt>
+<dd>section spec (see :class:<code><a title="gametime_watcher.filters.SectionMatcher" href="#gametime_watcher.filters.SectionMatcher">SectionMatcher</a></code>) or a matcher.</dd>
+<dt><strong><code>max_price_dollars</code></strong></dt>
+<dd>maximum all-in price <em>per ticket</em>, in dollars.</dd>
+<dt><strong><code>quantity</code></strong></dt>
+<dd>number of seats you want to buy together; only listings that
+offer this lot size are kept (see :meth:<code>Listing.can_buy</code>).</dd>
+<dt><strong><code>allow_larger</code></strong></dt>
+<dd>if True, also keep listings offering a larger lot.</dd>
+</dl></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="gametime_watcher.filters.SectionMatcher"><code class="flex name class">
+<span>class <span class="ident">SectionMatcher</span></span>
+<span>(</span><span>matchers: Optional[Sequence] = None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SectionMatcher:
+    &#34;&#34;&#34;Matches listings against a flexible section specification.
+
+    A spec is one or more tokens (comma-separated string, or a sequence). Each
+    token is one of:
+
+      * a numeric range, e.g. ``&#34;200-299&#34;`` (inclusive)
+      * an exact numeric section, e.g. ``&#34;119&#34;``
+      * a section/group name, e.g. ``&#34;Solon Club&#34;`` (case-insensitive; matches
+        the section label exactly or the section group as a substring)
+
+    A listing matches if it satisfies *any* token. An empty spec matches all.
+    &#34;&#34;&#34;
+
+    def __init__(self, matchers: Optional[Sequence] = None):
+        self._matchers = list(matchers or [])
+
+    @classmethod
+    def parse(cls, spec: Union[str, Sequence[str], None]) -&gt; &#34;SectionMatcher&#34;:
+        if spec is None:
+            return cls([])
+        tokens: List[str]
+        if isinstance(spec, str):
+            tokens = [t for t in (s.strip() for s in spec.split(&#34;,&#34;)) if t]
+        else:
+            tokens = [t.strip() for t in spec if t and t.strip()]
+
+        matchers = []
+        for token in tokens:
+            rng = _RANGE_RE.match(token)
+            if rng:
+                low, high = int(rng.group(1)), int(rng.group(2))
+                if low &gt; high:
+                    low, high = high, low
+                matchers.append(_Range(low, high))
+                continue
+            alpha_rng = _ALPHA_RANGE_RE.match(token)
+            if alpha_rng:
+                low, high = alpha_rng.group(1).upper(), alpha_rng.group(2).upper()
+                if low &gt; high:
+                    low, high = high, low
+                matchers.append(_AlphaRange(low, high))
+            elif token.isdigit():
+                matchers.append(_Exact(int(token)))
+            else:
+                matchers.append(_Name(token))
+        return cls(matchers)
+
+    @property
+    def is_empty(self) -&gt; bool:
+        return not self._matchers
+
+    def matches(self, listing: Listing) -&gt; bool:
+        if not self._matchers:
+            return True
+        return any(m.matches(listing) for m in self._matchers)</code></pre>
+</details>
+<div class="desc"><p>Matches listings against a flexible section specification.</p>
+<p>A spec is one or more tokens (comma-separated string, or a sequence). Each
+token is one of:</p>
+<ul>
+<li>a numeric range, e.g. <code>"200-299"</code> (inclusive)</li>
+<li>an exact numeric section, e.g. <code>"119"</code></li>
+<li>a section/group name, e.g. <code>"Solon Club"</code> (case-insensitive; matches
+the section label exactly or the section group as a substring)</li>
+</ul>
+<p>A listing matches if it satisfies <em>any</em> token. An empty spec matches all.</p></div>
+<h3>Static methods</h3>
+<dl>
+<dt id="gametime_watcher.filters.SectionMatcher.parse"><code class="name flex">
+<span>def <span class="ident">parse</span></span>(<span>spec: Union[str, Sequence[str], None]) ‑> <a title="gametime_watcher.filters.SectionMatcher" href="#gametime_watcher.filters.SectionMatcher">SectionMatcher</a></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="gametime_watcher.filters.SectionMatcher.is_empty"><code class="name">prop <span class="ident">is_empty</span> : bool</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def is_empty(self) -&gt; bool:
+    return not self._matchers</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="gametime_watcher.filters.SectionMatcher.matches"><code class="name flex">
+<span>def <span class="ident">matches</span></span>(<span>self, listing: Listing) ‑> bool</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def matches(self, listing: Listing) -&gt; bool:
+    if not self._matchers:
+        return True
+    return any(m.matches(listing) for m in self._matchers)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="gametime_watcher" href="index.html">gametime_watcher</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="gametime_watcher.filters.filter_listings" href="#gametime_watcher.filters.filter_listings">filter_listings</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="gametime_watcher.filters.SectionMatcher" href="#gametime_watcher.filters.SectionMatcher">SectionMatcher</a></code></h4>
+<ul class="">
+<li><code><a title="gametime_watcher.filters.SectionMatcher.is_empty" href="#gametime_watcher.filters.SectionMatcher.is_empty">is_empty</a></code></li>
+<li><code><a title="gametime_watcher.filters.SectionMatcher.matches" href="#gametime_watcher.filters.SectionMatcher.matches">matches</a></code></li>
+<li><code><a title="gametime_watcher.filters.SectionMatcher.parse" href="#gametime_watcher.filters.SectionMatcher.parse">parse</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

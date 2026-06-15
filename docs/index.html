@@ -1,0 +1,1015 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>gametime_watcher API documentation</title>
+<meta name="description" content="Gametime ticket-price watcher …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Package <code>gametime_watcher</code></h1>
+</header>
+<section id="section-intro">
+<p>Gametime ticket-price watcher.</p>
+<p>A small, dependency-free toolkit for listing current Gametime ticket prices for
+an event and alerting when a desired number of seats in chosen sections drops
+below a target per-ticket price.</p>
+<p>Public API:
+extract_event_id(url_or_id)
+-&gt; str
+fetch_event_html(event_id, &hellip;)
+-&gt; str
+parse_event(html)
+-&gt; Event
+parse_listings(html)
+-&gt; list[Listing]
+search_events(query, &hellip;)
+-&gt; list[Event]
+get_performer_events(id, &hellip;)
+-&gt; list[Event]
+SectionMatcher.parse(spec)
+-&gt; SectionMatcher
+filter_listings(&hellip;)
+-&gt; list[Listing]</p>
+</section>
+<section>
+<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+<dl>
+<dt><code class="name"><a title="gametime_watcher.api" href="api.html">gametime_watcher.api</a></code></dt>
+<dd>
+<div class="desc"><p>Fetching and parsing Gametime event pages …</p></div>
+</dd>
+<dt><code class="name"><a title="gametime_watcher.cli" href="cli.html">gametime_watcher.cli</a></code></dt>
+<dd>
+<div class="desc"><p>Command-line interface for the Gametime ticket watcher.</p></div>
+</dd>
+<dt><code class="name"><a title="gametime_watcher.filters" href="filters.html">gametime_watcher.filters</a></code></dt>
+<dd>
+<div class="desc"><p>Filtering of listings by section, price, and quantity.</p></div>
+</dd>
+<dt><code class="name"><a title="gametime_watcher.models" href="models.html">gametime_watcher.models</a></code></dt>
+<dd>
+<div class="desc"><p>Data models for Gametime listings.</p></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="gametime_watcher.extract_event_id"><code class="name flex">
+<span>def <span class="ident">extract_event_id</span></span>(<span>url_or_id: str,<br>*,<br>user_agent: str = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36',<br>timeout: float = 30.0) ‑> str</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def extract_event_id(
+    url_or_id: str,
+    *,
+    user_agent: str = DEFAULT_USER_AGENT,
+    timeout: float = 30.0,
+) -&gt; str:
+    &#34;&#34;&#34;Resolve a Gametime event id from a URL, short link, or bare id.
+
+    Accepts:
+      * a bare 24-hex event id
+      * any URL containing ``/events/&lt;id&gt;`` (event or listing pages)
+      * a short link (e.g. ``https://gtix.co/...``) which is followed via
+        HTTP redirects until an event id is found.
+    &#34;&#34;&#34;
+    value = url_or_id.strip()
+    if _HEX24.match(value):
+        return value
+
+    m = _EVENT_ID_IN_URL.search(value)
+    if m:
+        return m.group(1)
+
+    if &#34;://&#34; not in value:
+        raise GametimeError(
+            f&#34;Could not find an event id in {url_or_id!r}; pass a gametime.co &#34;
+            &#34;event/listing URL, a short link, or a 24-character event id.&#34;
+        )
+
+    # Short link or other URL without an inline id: follow redirects and inspect
+    # both the final URL and the response body.
+    try:
+        resp = _http_get(value, user_agent, timeout)
+        final_url = resp.geturl()
+        body_head = _read_body(resp)[:200_000]
+    except urllib.error.URLError as exc:  # pragma: no cover - network failure path
+        raise GametimeError(f&#34;Failed to resolve short link {url_or_id!r}: {exc}&#34;) from exc
+
+    m = _EVENT_ID_IN_URL.search(final_url) or _EVENT_ID_IN_URL.search(body_head)
+    if m:
+        return m.group(1)
+    raise GametimeError(f&#34;Could not resolve an event id from {url_or_id!r}.&#34;)</code></pre>
+</details>
+<div class="desc"><p>Resolve a Gametime event id from a URL, short link, or bare id.</p>
+<h2 id="accepts">Accepts</h2>
+<ul>
+<li>a bare 24-hex event id</li>
+<li>any URL containing <code>/events/&lt;id&gt;</code> (event or listing pages)</li>
+<li>a short link (e.g. <code>https://gtix.co/...</code>) which is followed via
+HTTP redirects until an event id is found.</li>
+</ul></div>
+</dd>
+<dt id="gametime_watcher.fetch_event_html"><code class="name flex">
+<span>def <span class="ident">fetch_event_html</span></span>(<span>event_id: str,<br>*,<br>user_agent: str = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36',<br>timeout: float = 30.0,<br>retries: int = 3,<br>backoff_base: float = 1.0) ‑> str</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def fetch_event_html(
+    event_id: str,
+    *,
+    user_agent: str = DEFAULT_USER_AGENT,
+    timeout: float = 30.0,
+    retries: int = 3,
+    backoff_base: float = 1.0,
+) -&gt; str:
+    &#34;&#34;&#34;Download the server-rendered event page HTML for ``event_id``.
+
+    Makes up to *retries* additional attempts with exponential backoff on
+    transient HTTP errors (502, 503, 504, 429).
+    &#34;&#34;&#34;
+    url = f&#34;https://gametime.co/events/{event_id}&#34;
+    last_exc: Optional[Exception] = None
+    for attempt in range(1 + retries):
+        try:
+            resp = _http_get(url, user_agent, timeout)
+            return _read_body(resp)
+        except urllib.error.HTTPError as exc:
+            last_exc = exc
+            if exc.code in _RETRYABLE_HTTP_CODES and attempt &lt; retries:
+                time.sleep(backoff_base * (2**attempt))
+                continue
+            raise GametimeError(f&#34;Failed to fetch event page for {event_id!r}: {exc}&#34;) from exc
+        except urllib.error.URLError as exc:  # pragma: no cover - network failure path
+            raise GametimeError(f&#34;Failed to fetch event page for {event_id!r}: {exc}&#34;) from exc
+    # Should not be reached, but just in case:
+    raise GametimeError(  # pragma: no cover
+        f&#34;Failed to fetch event page for {event_id!r}: {last_exc}&#34;
+    )</code></pre>
+</details>
+<div class="desc"><p>Download the server-rendered event page HTML for <code>event_id</code>.</p>
+<p>Makes up to <em>retries</em> additional attempts with exponential backoff on
+transient HTTP errors (502, 503, 504, 429).</p></div>
+</dd>
+<dt id="gametime_watcher.filter_listings"><code class="name flex">
+<span>def <span class="ident">filter_listings</span></span>(<span>listings: Iterable[<a title="gametime_watcher.Listing" href="#gametime_watcher.Listing">Listing</a>],<br>*,<br>sections: Union[str, Sequence[str], <a title="gametime_watcher.SectionMatcher" href="#gametime_watcher.SectionMatcher">SectionMatcher</a>, None] = None,<br>max_price_dollars: Optional[float] = None,<br>quantity: Optional[int] = None,<br>allow_larger: bool = False) ‑> List[<a title="gametime_watcher.models.Listing" href="models.html#gametime_watcher.models.Listing">Listing</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def filter_listings(
+    listings: Iterable[Listing],
+    *,
+    sections: Union[str, Sequence[str], SectionMatcher, None] = None,
+    max_price_dollars: Optional[float] = None,
+    quantity: Optional[int] = None,
+    allow_larger: bool = False,
+) -&gt; List[Listing]:
+    &#34;&#34;&#34;Return listings matching all provided criteria, cheapest first.
+
+    Args:
+        sections: section spec (see :class:`SectionMatcher`) or a matcher.
+        max_price_dollars: maximum all-in price *per ticket*, in dollars.
+        quantity: number of seats you want to buy together; only listings that
+            offer this lot size are kept (see :meth:`Listing.can_buy`).
+        allow_larger: if True, also keep listings offering a larger lot.
+    &#34;&#34;&#34;
+    matcher = sections if isinstance(sections, SectionMatcher) else SectionMatcher.parse(sections)
+
+    result = []
+    for listing in listings:
+        if not matcher.matches(listing):
+            continue
+        if max_price_dollars is not None and listing.price_total_dollars &gt; max_price_dollars:
+            continue
+        if quantity is not None and not listing.can_buy(quantity, allow_larger=allow_larger):
+            continue
+        result.append(listing)
+
+    result.sort(key=lambda listing: (listing.price_total, listing.section, listing.row or &#34;&#34;))
+    return result</code></pre>
+</details>
+<div class="desc"><p>Return listings matching all provided criteria, cheapest first.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>sections</code></strong></dt>
+<dd>section spec (see :class:<code><a title="gametime_watcher.SectionMatcher" href="#gametime_watcher.SectionMatcher">SectionMatcher</a></code>) or a matcher.</dd>
+<dt><strong><code>max_price_dollars</code></strong></dt>
+<dd>maximum all-in price <em>per ticket</em>, in dollars.</dd>
+<dt><strong><code>quantity</code></strong></dt>
+<dd>number of seats you want to buy together; only listings that
+offer this lot size are kept (see :meth:<code><a title="gametime_watcher.Listing.can_buy" href="#gametime_watcher.Listing.can_buy">Listing.can_buy()</a></code>).</dd>
+<dt><strong><code>allow_larger</code></strong></dt>
+<dd>if True, also keep listings offering a larger lot.</dd>
+</dl></div>
+</dd>
+<dt id="gametime_watcher.get_performer_events"><code class="name flex">
+<span>def <span class="ident">get_performer_events</span></span>(<span>performer_id: str,<br>*,<br>user_agent: str = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36',<br>timeout: float = 30.0) ‑> List[<a title="gametime_watcher.models.Event" href="models.html#gametime_watcher.models.Event">Event</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_performer_events(
+    performer_id: str,
+    *,
+    user_agent: str = DEFAULT_USER_AGENT,
+    timeout: float = 30.0,
+) -&gt; List[Event]:
+    &#34;&#34;&#34;Fetch *all* upcoming events for a performer using the paginated API.
+
+    This uses the ``/v1/events?performer_id=`` endpoint which returns events
+    in pages and supports cursor-based pagination, ensuring all games are
+    returned (not just the first ~10 from the search endpoint).
+
+    Each returned :class:`Event` has ``extra[&#34;is_home&#34;]`` set to ``True`` when
+    the performer is the primary (home) performer for that event.
+    &#34;&#34;&#34;
+    results: List[Event] = []
+    cursor: Optional[str] = None
+    max_pages = 20  # Safety limit
+
+    for _ in range(max_pages):
+        url = f&#34;https://mobile.gametime.co/v1/events?performer_id={performer_id}&amp;per_page=50&#34;
+        if cursor:
+            url += f&#34;&amp;cursor={cursor}&#34;
+        try:
+            resp = _http_get(url, user_agent, timeout)
+            body = _read_body(resp)
+        except urllib.error.URLError as exc:  # pragma: no cover
+            raise GametimeError(f&#34;Failed to fetch events for performer {performer_id!r}: {exc}&#34;) from exc
+
+        try:
+            data = json.loads(body)
+        except json.JSONDecodeError as exc:
+            raise GametimeError(f&#34;Invalid response for performer {performer_id!r}: {exc}&#34;) from exc
+
+        for entry in data.get(&#34;events&#34;, []):
+            ev = entry.get(&#34;event&#34;, entry)
+            event_id = ev.get(&#34;id&#34;, &#34;&#34;)
+            event_url = f&#34;https://gametime.co/events/{event_id}&#34; if event_id else None
+            # Determine if this performer is the home (primary) team
+            performers = ev.get(&#34;performers&#34;, [])
+            is_home = any(p.get(&#34;id&#34;) == performer_id and p.get(&#34;primary&#34;, False) for p in performers)
+            results.append(
+                Event(
+                    id=event_id,
+                    name=ev.get(&#34;name&#34;),
+                    datetime_local=ev.get(&#34;datetime_local&#34;),
+                    venue_id=ev.get(&#34;venue_id&#34;),
+                    extra={
+                        &#34;url&#34;: event_url,
+                        &#34;min_price_total&#34;: ev.get(&#34;min_price&#34;, {}).get(&#34;total&#34;),
+                        &#34;is_home&#34;: is_home,
+                    },
+                )
+            )
+
+        if not data.get(&#34;more&#34;):
+            break
+        cursor = data.get(&#34;cursor&#34;)
+        if not cursor:
+            break
+
+    return results</code></pre>
+</details>
+<div class="desc"><p>Fetch <em>all</em> upcoming events for a performer using the paginated API.</p>
+<p>This uses the <code>/v1/events?performer_id=</code> endpoint which returns events
+in pages and supports cursor-based pagination, ensuring all games are
+returned (not just the first ~10 from the search endpoint).</p>
+<p>Each returned :class:<code><a title="gametime_watcher.Event" href="#gametime_watcher.Event">Event</a></code> has <code>extra["is_home"]</code> set to <code>True</code> when
+the performer is the primary (home) performer for that event.</p></div>
+</dd>
+<dt id="gametime_watcher.parse_event"><code class="name flex">
+<span>def <span class="ident">parse_event</span></span>(<span>html: str) ‑> <a title="gametime_watcher.models.Event" href="models.html#gametime_watcher.models.Event">Event</a> | None</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def parse_event(html: str) -&gt; Optional[Event]:
+    &#34;&#34;&#34;Extract lightweight event metadata, if present in the page.
+
+    The server-rendered event object names the matchup with
+    ``&#34;name&#34;:&#34;...&#34;,&#34;nameOverride&#34;:...,&#34;performers&#34;`` and uses camelCase
+    ``datetimeLocal``; we anchor on those to avoid picking up unrelated
+    ``name`` fields (performers, sections, etc.).
+    &#34;&#34;&#34;
+    name = None
+    mname = re.search(r&#39;&#34;name&#34;:&#34;((?:[^&#34;\\]|\\.)*)&#34;,&#34;nameOverride&#34;:[^,]*,&#34;performers&#34;&#39;, html)
+    if mname:
+        name = json.loads(&#39;&#34;%s&#34;&#39; % mname.group(1))
+
+    dt = None
+    mdt = re.search(r&#39;&#34;datetimeLocal&#34;:&#34;([^&#34;]+)&#34;&#39;, html) or re.search(r&#39;&#34;datetime_local&#34;:&#34;([^&#34;]+)&#34;&#39;, html)
+    if mdt:
+        dt = mdt.group(1)
+
+    venue = None
+    mven = re.search(r&#39;&#34;venue_id&#34;:&#34;([a-f0-9]{24})&#34;&#39;, html) or re.search(r&#39;&#34;venueId&#34;:&#34;([a-f0-9]{24})&#34;&#39;, html)
+    if mven:
+        venue = mven.group(1)
+
+    eid = None
+    meid = re.search(r&#39;&#34;id&#34;:&#34;([a-f0-9]{24})&#34;,&#34;performers&#34;&#39;, html)
+    if meid:
+        eid = meid.group(1)
+
+    if not any([name, dt, venue, eid]):
+        return None
+    return Event(id=eid or &#34;&#34;, name=name, datetime_local=dt, venue_id=venue)</code></pre>
+</details>
+<div class="desc"><p>Extract lightweight event metadata, if present in the page.</p>
+<p>The server-rendered event object names the matchup with
+<code>"name":"...","nameOverride":...,"performers"</code> and uses camelCase
+<code>datetimeLocal</code>; we anchor on those to avoid picking up unrelated
+<code>name</code> fields (performers, sections, etc.).</p></div>
+</dd>
+<dt id="gametime_watcher.parse_listings"><code class="name flex">
+<span>def <span class="ident">parse_listings</span></span>(<span>html: str) ‑> List[<a title="gametime_watcher.models.Listing" href="models.html#gametime_watcher.models.Listing">Listing</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def parse_listings(html: str) -&gt; List[Listing]:
+    &#34;&#34;&#34;Parse all ticket listings embedded in an event page.
+
+    Each listing object in the Next.js stream begins with ``{&#34;availableLots&#34;:``
+    and carries an ``id``, ``price`` block (all-in ``total`` in cents per
+    ticket), ``seats`` and a ``spot`` describing ``section``/``row``. We split
+    on the stable ``availableLots`` anchor and extract fields per chunk, which
+    is resilient to key-ordering changes.
+    &#34;&#34;&#34;
+    listings: List[Listing] = []
+    seen = set()
+    parts = html.split(&#39;{&#34;availableLots&#34;:&#39;)
+    for part in parts[1:]:
+        chunk = part[:4000]
+
+        lots_match = re.match(r&#34;\[([0-9,\s]*)\]&#34;, chunk)
+        if not lots_match:
+            continue
+        available_lots = [int(x) for x in re.findall(r&#34;\d+&#34;, lots_match.group(1))]
+
+        # All-in per-ticket price: the &#34;total&#34; inside the price block.
+        price_match = re.search(r&#39;&#34;price&#34;:\{[^{}]*?&#34;total&#34;:(\d+)\}&#39;, chunk)
+        if not price_match:
+            continue
+        price_total = int(price_match.group(1))
+
+        section = _find_string(chunk, &#34;section&#34;)
+        if section is None:
+            continue
+
+        listing_id = _find_string(chunk, &#34;id&#34;)
+        if not listing_id or listing_id in seen:
+            # Skip duplicates (e.g. a listing echoed in map-pin data).
+            if listing_id and listing_id in seen:
+                continue
+        if listing_id:
+            seen.add(listing_id)
+
+        listings.append(
+            Listing(
+                id=listing_id or &#34;&#34;,
+                section=section,
+                section_group=_find_string(chunk, &#34;sectionGroup&#34;),
+                row=_find_string(chunk, &#34;row&#34;),
+                seats=_find_str_list(chunk, &#34;seats&#34;),
+                available_lots=available_lots,
+                price_total=price_total,
+                face_value=_find_int(chunk, &#34;faceValue&#34;),
+                event_id=_find_string(chunk, &#34;eventId&#34;),
+                url=_find_string(chunk, &#34;seoUrl&#34;),
+            )
+        )
+    return listings</code></pre>
+</details>
+<div class="desc"><p>Parse all ticket listings embedded in an event page.</p>
+<p>Each listing object in the Next.js stream begins with <code>{"availableLots":</code>
+and carries an <code>id</code>, <code>price</code> block (all-in <code>total</code> in cents per
+ticket), <code>seats</code> and a <code>spot</code> describing <code>section</code>/<code>row</code>. We split
+on the stable <code>availableLots</code> anchor and extract fields per chunk, which
+is resilient to key-ordering changes.</p></div>
+</dd>
+<dt id="gametime_watcher.search_events"><code class="name flex">
+<span>def <span class="ident">search_events</span></span>(<span>query: str,<br>*,<br>user_agent: str = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36',<br>timeout: float = 30.0) ‑> List[<a title="gametime_watcher.models.Event" href="models.html#gametime_watcher.models.Event">Event</a>]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def search_events(
+    query: str,
+    *,
+    user_agent: str = DEFAULT_USER_AGENT,
+    timeout: float = 30.0,
+) -&gt; List[Event]:
+    &#34;&#34;&#34;Search Gametime for upcoming events matching ``query`` (e.g. a team name).
+
+    Returns a list of :class:`Event` objects with ``id``, ``name``,
+    ``datetime_local``, and ``extra[&#34;url&#34;]`` populated.
+
+    .. note::
+
+       The search endpoint only returns ~10 results. Use
+       :func:`get_performer_events` with a performer id to retrieve *all*
+       upcoming events for a team/performer.
+    &#34;&#34;&#34;
+    url = f&#34;https://mobile.gametime.co/v1/search?q={urllib.request.quote(query)}&#34;
+    try:
+        resp = _http_get(url, user_agent, timeout)
+        body = _read_body(resp)
+    except urllib.error.URLError as exc:  # pragma: no cover - network failure path
+        raise GametimeError(f&#34;Search request failed for {query!r}: {exc}&#34;) from exc
+
+    try:
+        data = json.loads(body)
+    except json.JSONDecodeError as exc:
+        raise GametimeError(f&#34;Invalid search response for {query!r}: {exc}&#34;) from exc
+
+    results: List[Event] = []
+    for entry in data.get(&#34;events&#34;, []):
+        ev = entry.get(&#34;event&#34;, entry)
+        event_id = ev.get(&#34;id&#34;, &#34;&#34;)
+        event_url = f&#34;https://gametime.co/events/{event_id}&#34; if event_id else None
+        performers = ev.get(&#34;performers&#34;, [])
+        matched_id = _find_performer_id_in_entry(entry, query)
+        is_home = bool(matched_id) and any(p.get(&#34;primary&#34;, False) for p in performers if p.get(&#34;id&#34;) == matched_id)
+        results.append(
+            Event(
+                id=event_id,
+                name=ev.get(&#34;name&#34;),
+                datetime_local=ev.get(&#34;datetime_local&#34;),
+                venue_id=ev.get(&#34;venue_id&#34;),
+                extra={
+                    &#34;url&#34;: event_url,
+                    &#34;min_price_total&#34;: ev.get(&#34;min_price&#34;, {}).get(&#34;total&#34;),
+                    &#34;is_home&#34;: is_home,
+                },
+            )
+        )
+    return results</code></pre>
+</details>
+<div class="desc"><p>Search Gametime for upcoming events matching <code>query</code> (e.g. a team name).</p>
+<p>Returns a list of :class:<code><a title="gametime_watcher.Event" href="#gametime_watcher.Event">Event</a></code> objects with <code>id</code>, <code>name</code>,
+<code>datetime_local</code>, and <code>extra["url"]</code> populated.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The search endpoint only returns ~10 results. Use
+:func:<code><a title="gametime_watcher.get_performer_events" href="#gametime_watcher.get_performer_events">get_performer_events()</a></code> with a performer id to retrieve <em>all</em>
+upcoming events for a team/performer.</p>
+</div></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="gametime_watcher.Event"><code class="flex name class">
+<span>class <span class="ident">Event</span></span>
+<span>(</span><span>id: str,<br>name: Optional[str] = None,<br>datetime_local: Optional[str] = None,<br>venue_id: Optional[str] = None,<br>extra: dict = &lt;factory&gt;)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass
+class Event:
+    &#34;&#34;&#34;Lightweight metadata about an event.&#34;&#34;&#34;
+
+    id: str
+    name: Optional[str] = None
+    datetime_local: Optional[str] = None
+    venue_id: Optional[str] = None
+    extra: dict = field(default_factory=dict)
+
+    def to_dict(self) -&gt; dict:
+        return {
+            &#34;id&#34;: self.id,
+            &#34;name&#34;: self.name,
+            &#34;datetime_local&#34;: self.datetime_local,
+            &#34;venue_id&#34;: self.venue_id,
+        }</code></pre>
+</details>
+<div class="desc"><p>Lightweight metadata about an event.</p></div>
+<h3>Instance variables</h3>
+<dl>
+<dt id="gametime_watcher.Event.datetime_local"><code class="name">var <span class="ident">datetime_local</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.Event.extra"><code class="name">var <span class="ident">extra</span> : dict</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.Event.id"><code class="name">var <span class="ident">id</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.Event.name"><code class="name">var <span class="ident">name</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.Event.venue_id"><code class="name">var <span class="ident">venue_id</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="gametime_watcher.Event.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self) ‑> dict</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def to_dict(self) -&gt; dict:
+    return {
+        &#34;id&#34;: self.id,
+        &#34;name&#34;: self.name,
+        &#34;datetime_local&#34;: self.datetime_local,
+        &#34;venue_id&#34;: self.venue_id,
+    }</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="gametime_watcher.Listing"><code class="flex name class">
+<span>class <span class="ident">Listing</span></span>
+<span>(</span><span>id: str,<br>section: str,<br>section_group: Optional[str],<br>row: Optional[str],<br>seats: List[str],<br>available_lots: List[int],<br>price_total: int,<br>face_value: Optional[int],<br>event_id: Optional[str] = None,<br>url: Optional[str] = None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@dataclass(frozen=True)
+class Listing:
+    &#34;&#34;&#34;A single resale ticket listing for an event.
+
+    Prices are stored in whole cents (as Gametime returns them). ``price_total``
+    is the *all-in price per ticket* (what the buyer pays for one seat,
+    including fees), matching the price shown on gametime.co.
+    &#34;&#34;&#34;
+
+    id: str
+    section: str
+    section_group: Optional[str]
+    row: Optional[str]
+    seats: List[str]
+    # Group sizes that can be purchased, e.g. [2, 4] means you may buy 2 or 4.
+    available_lots: List[int]
+    price_total: int  # all-in price per ticket, in cents
+    face_value: Optional[int]  # in cents, if known
+    event_id: Optional[str] = None
+    url: Optional[str] = None
+
+    @property
+    def price_total_dollars(self) -&gt; float:
+        &#34;&#34;&#34;All-in per-ticket price in dollars.&#34;&#34;&#34;
+        return self.price_total / 100.0
+
+    @property
+    def face_value_dollars(self) -&gt; Optional[float]:
+        if self.face_value is None:
+            return None
+        return self.face_value / 100.0
+
+    @property
+    def section_is_numeric(self) -&gt; bool:
+        return self.section.isdigit()
+
+    @property
+    def section_number(self) -&gt; Optional[int]:
+        return int(self.section) if self.section.isdigit() else None
+
+    def can_buy(self, quantity: int, allow_larger: bool = False) -&gt; bool:
+        &#34;&#34;&#34;Whether ``quantity`` seats can be purchased from this listing.
+
+        By default Gametime only lets you buy one of the exact offered lot
+        sizes, so this checks membership in ``available_lots``. With
+        ``allow_larger`` it also accepts any offered lot larger than the
+        requested quantity.
+        &#34;&#34;&#34;
+        if quantity in self.available_lots:
+            return True
+        if allow_larger and any(lot &gt;= quantity for lot in self.available_lots):
+            return True
+        return False
+
+    def to_dict(self) -&gt; dict:
+        return {
+            &#34;id&#34;: self.id,
+            &#34;section&#34;: self.section,
+            &#34;section_group&#34;: self.section_group,
+            &#34;row&#34;: self.row,
+            &#34;seats&#34;: self.seats,
+            &#34;available_lots&#34;: self.available_lots,
+            &#34;price_total_cents&#34;: self.price_total,
+            &#34;price_total_dollars&#34;: round(self.price_total_dollars, 2),
+            &#34;face_value_cents&#34;: self.face_value,
+            &#34;event_id&#34;: self.event_id,
+            &#34;url&#34;: self.url,
+        }</code></pre>
+</details>
+<div class="desc"><p>A single resale ticket listing for an event.</p>
+<p>Prices are stored in whole cents (as Gametime returns them). <code>price_total</code>
+is the <em>all-in price per ticket</em> (what the buyer pays for one seat,
+including fees), matching the price shown on gametime.co.</p></div>
+<h3>Instance variables</h3>
+<dl>
+<dt id="gametime_watcher.Listing.available_lots"><code class="name">var <span class="ident">available_lots</span> : List[int]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.Listing.event_id"><code class="name">var <span class="ident">event_id</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.Listing.face_value"><code class="name">var <span class="ident">face_value</span> : int | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.Listing.face_value_dollars"><code class="name">prop <span class="ident">face_value_dollars</span> : Optional[float]</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def face_value_dollars(self) -&gt; Optional[float]:
+    if self.face_value is None:
+        return None
+    return self.face_value / 100.0</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.Listing.id"><code class="name">var <span class="ident">id</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.Listing.price_total"><code class="name">var <span class="ident">price_total</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.Listing.price_total_dollars"><code class="name">prop <span class="ident">price_total_dollars</span> : float</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def price_total_dollars(self) -&gt; float:
+    &#34;&#34;&#34;All-in per-ticket price in dollars.&#34;&#34;&#34;
+    return self.price_total / 100.0</code></pre>
+</details>
+<div class="desc"><p>All-in per-ticket price in dollars.</p></div>
+</dd>
+<dt id="gametime_watcher.Listing.row"><code class="name">var <span class="ident">row</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.Listing.seats"><code class="name">var <span class="ident">seats</span> : List[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.Listing.section"><code class="name">var <span class="ident">section</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.Listing.section_group"><code class="name">var <span class="ident">section_group</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.Listing.section_is_numeric"><code class="name">prop <span class="ident">section_is_numeric</span> : bool</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def section_is_numeric(self) -&gt; bool:
+    return self.section.isdigit()</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.Listing.section_number"><code class="name">prop <span class="ident">section_number</span> : Optional[int]</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def section_number(self) -&gt; Optional[int]:
+    return int(self.section) if self.section.isdigit() else None</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="gametime_watcher.Listing.url"><code class="name">var <span class="ident">url</span> : str | None</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="gametime_watcher.Listing.can_buy"><code class="name flex">
+<span>def <span class="ident">can_buy</span></span>(<span>self, quantity: int, allow_larger: bool = False) ‑> bool</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def can_buy(self, quantity: int, allow_larger: bool = False) -&gt; bool:
+    &#34;&#34;&#34;Whether ``quantity`` seats can be purchased from this listing.
+
+    By default Gametime only lets you buy one of the exact offered lot
+    sizes, so this checks membership in ``available_lots``. With
+    ``allow_larger`` it also accepts any offered lot larger than the
+    requested quantity.
+    &#34;&#34;&#34;
+    if quantity in self.available_lots:
+        return True
+    if allow_larger and any(lot &gt;= quantity for lot in self.available_lots):
+        return True
+    return False</code></pre>
+</details>
+<div class="desc"><p>Whether <code>quantity</code> seats can be purchased from this listing.</p>
+<p>By default Gametime only lets you buy one of the exact offered lot
+sizes, so this checks membership in <code>available_lots</code>. With
+<code>allow_larger</code> it also accepts any offered lot larger than the
+requested quantity.</p></div>
+</dd>
+<dt id="gametime_watcher.Listing.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self) ‑> dict</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def to_dict(self) -&gt; dict:
+    return {
+        &#34;id&#34;: self.id,
+        &#34;section&#34;: self.section,
+        &#34;section_group&#34;: self.section_group,
+        &#34;row&#34;: self.row,
+        &#34;seats&#34;: self.seats,
+        &#34;available_lots&#34;: self.available_lots,
+        &#34;price_total_cents&#34;: self.price_total,
+        &#34;price_total_dollars&#34;: round(self.price_total_dollars, 2),
+        &#34;face_value_cents&#34;: self.face_value,
+        &#34;event_id&#34;: self.event_id,
+        &#34;url&#34;: self.url,
+    }</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="gametime_watcher.SectionMatcher"><code class="flex name class">
+<span>class <span class="ident">SectionMatcher</span></span>
+<span>(</span><span>matchers: Optional[Sequence] = None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SectionMatcher:
+    &#34;&#34;&#34;Matches listings against a flexible section specification.
+
+    A spec is one or more tokens (comma-separated string, or a sequence). Each
+    token is one of:
+
+      * a numeric range, e.g. ``&#34;200-299&#34;`` (inclusive)
+      * an exact numeric section, e.g. ``&#34;119&#34;``
+      * a section/group name, e.g. ``&#34;Solon Club&#34;`` (case-insensitive; matches
+        the section label exactly or the section group as a substring)
+
+    A listing matches if it satisfies *any* token. An empty spec matches all.
+    &#34;&#34;&#34;
+
+    def __init__(self, matchers: Optional[Sequence] = None):
+        self._matchers = list(matchers or [])
+
+    @classmethod
+    def parse(cls, spec: Union[str, Sequence[str], None]) -&gt; &#34;SectionMatcher&#34;:
+        if spec is None:
+            return cls([])
+        tokens: List[str]
+        if isinstance(spec, str):
+            tokens = [t for t in (s.strip() for s in spec.split(&#34;,&#34;)) if t]
+        else:
+            tokens = [t.strip() for t in spec if t and t.strip()]
+
+        matchers = []
+        for token in tokens:
+            rng = _RANGE_RE.match(token)
+            if rng:
+                low, high = int(rng.group(1)), int(rng.group(2))
+                if low &gt; high:
+                    low, high = high, low
+                matchers.append(_Range(low, high))
+                continue
+            alpha_rng = _ALPHA_RANGE_RE.match(token)
+            if alpha_rng:
+                low, high = alpha_rng.group(1).upper(), alpha_rng.group(2).upper()
+                if low &gt; high:
+                    low, high = high, low
+                matchers.append(_AlphaRange(low, high))
+            elif token.isdigit():
+                matchers.append(_Exact(int(token)))
+            else:
+                matchers.append(_Name(token))
+        return cls(matchers)
+
+    @property
+    def is_empty(self) -&gt; bool:
+        return not self._matchers
+
+    def matches(self, listing: Listing) -&gt; bool:
+        if not self._matchers:
+            return True
+        return any(m.matches(listing) for m in self._matchers)</code></pre>
+</details>
+<div class="desc"><p>Matches listings against a flexible section specification.</p>
+<p>A spec is one or more tokens (comma-separated string, or a sequence). Each
+token is one of:</p>
+<ul>
+<li>a numeric range, e.g. <code>"200-299"</code> (inclusive)</li>
+<li>an exact numeric section, e.g. <code>"119"</code></li>
+<li>a section/group name, e.g. <code>"Solon Club"</code> (case-insensitive; matches
+the section label exactly or the section group as a substring)</li>
+</ul>
+<p>A listing matches if it satisfies <em>any</em> token. An empty spec matches all.</p></div>
+<h3>Static methods</h3>
+<dl>
+<dt id="gametime_watcher.SectionMatcher.parse"><code class="name flex">
+<span>def <span class="ident">parse</span></span>(<span>spec: Union[str, Sequence[str], None]) ‑> <a title="gametime_watcher.filters.SectionMatcher" href="filters.html#gametime_watcher.filters.SectionMatcher">SectionMatcher</a></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="gametime_watcher.SectionMatcher.is_empty"><code class="name">prop <span class="ident">is_empty</span> : bool</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def is_empty(self) -&gt; bool:
+    return not self._matchers</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="gametime_watcher.SectionMatcher.matches"><code class="name flex">
+<span>def <span class="ident">matches</span></span>(<span>self,<br>listing: <a title="gametime_watcher.Listing" href="#gametime_watcher.Listing">Listing</a>) ‑> bool</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def matches(self, listing: Listing) -&gt; bool:
+    if not self._matchers:
+        return True
+    return any(m.matches(listing) for m in self._matchers)</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-submodules">Sub-modules</a></h3>
+<ul>
+<li><code><a title="gametime_watcher.api" href="api.html">gametime_watcher.api</a></code></li>
+<li><code><a title="gametime_watcher.cli" href="cli.html">gametime_watcher.cli</a></code></li>
+<li><code><a title="gametime_watcher.filters" href="filters.html">gametime_watcher.filters</a></code></li>
+<li><code><a title="gametime_watcher.models" href="models.html">gametime_watcher.models</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="gametime_watcher.extract_event_id" href="#gametime_watcher.extract_event_id">extract_event_id</a></code></li>
+<li><code><a title="gametime_watcher.fetch_event_html" href="#gametime_watcher.fetch_event_html">fetch_event_html</a></code></li>
+<li><code><a title="gametime_watcher.filter_listings" href="#gametime_watcher.filter_listings">filter_listings</a></code></li>
+<li><code><a title="gametime_watcher.get_performer_events" href="#gametime_watcher.get_performer_events">get_performer_events</a></code></li>
+<li><code><a title="gametime_watcher.parse_event" href="#gametime_watcher.parse_event">parse_event</a></code></li>
+<li><code><a title="gametime_watcher.parse_listings" href="#gametime_watcher.parse_listings">parse_listings</a></code></li>
+<li><code><a title="gametime_watcher.search_events" href="#gametime_watcher.search_events">search_events</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="gametime_watcher.Event" href="#gametime_watcher.Event">Event</a></code></h4>
+<ul class="two-column">
+<li><code><a title="gametime_watcher.Event.datetime_local" href="#gametime_watcher.Event.datetime_local">datetime_local</a></code></li>
+<li><code><a title="gametime_watcher.Event.extra" href="#gametime_watcher.Event.extra">extra</a></code></li>
+<li><code><a title="gametime_watcher.Event.id" href="#gametime_watcher.Event.id">id</a></code></li>
+<li><code><a title="gametime_watcher.Event.name" href="#gametime_watcher.Event.name">name</a></code></li>
+<li><code><a title="gametime_watcher.Event.to_dict" href="#gametime_watcher.Event.to_dict">to_dict</a></code></li>
+<li><code><a title="gametime_watcher.Event.venue_id" href="#gametime_watcher.Event.venue_id">venue_id</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="gametime_watcher.Listing" href="#gametime_watcher.Listing">Listing</a></code></h4>
+<ul class="two-column">
+<li><code><a title="gametime_watcher.Listing.available_lots" href="#gametime_watcher.Listing.available_lots">available_lots</a></code></li>
+<li><code><a title="gametime_watcher.Listing.can_buy" href="#gametime_watcher.Listing.can_buy">can_buy</a></code></li>
+<li><code><a title="gametime_watcher.Listing.event_id" href="#gametime_watcher.Listing.event_id">event_id</a></code></li>
+<li><code><a title="gametime_watcher.Listing.face_value" href="#gametime_watcher.Listing.face_value">face_value</a></code></li>
+<li><code><a title="gametime_watcher.Listing.face_value_dollars" href="#gametime_watcher.Listing.face_value_dollars">face_value_dollars</a></code></li>
+<li><code><a title="gametime_watcher.Listing.id" href="#gametime_watcher.Listing.id">id</a></code></li>
+<li><code><a title="gametime_watcher.Listing.price_total" href="#gametime_watcher.Listing.price_total">price_total</a></code></li>
+<li><code><a title="gametime_watcher.Listing.price_total_dollars" href="#gametime_watcher.Listing.price_total_dollars">price_total_dollars</a></code></li>
+<li><code><a title="gametime_watcher.Listing.row" href="#gametime_watcher.Listing.row">row</a></code></li>
+<li><code><a title="gametime_watcher.Listing.seats" href="#gametime_watcher.Listing.seats">seats</a></code></li>
+<li><code><a title="gametime_watcher.Listing.section" href="#gametime_watcher.Listing.section">section</a></code></li>
+<li><code><a title="gametime_watcher.Listing.section_group" href="#gametime_watcher.Listing.section_group">section_group</a></code></li>
+<li><code><a title="gametime_watcher.Listing.section_is_numeric" href="#gametime_watcher.Listing.section_is_numeric">section_is_numeric</a></code></li>
+<li><code><a title="gametime_watcher.Listing.section_number" href="#gametime_watcher.Listing.section_number">section_number</a></code></li>
+<li><code><a title="gametime_watcher.Listing.to_dict" href="#gametime_watcher.Listing.to_dict">to_dict</a></code></li>
+<li><code><a title="gametime_watcher.Listing.url" href="#gametime_watcher.Listing.url">url</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="gametime_watcher.SectionMatcher" href="#gametime_watcher.SectionMatcher">SectionMatcher</a></code></h4>
+<ul class="">
+<li><code><a title="gametime_watcher.SectionMatcher.is_empty" href="#gametime_watcher.SectionMatcher.is_empty">is_empty</a></code></li>
+<li><code><a title="gametime_watcher.SectionMatcher.matches" href="#gametime_watcher.SectionMatcher.matches">matches</a></code></li>
+<li><code><a title="gametime_watcher.SectionMatcher.parse" href="#gametime_watcher.SectionMatcher.parse">parse</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>
