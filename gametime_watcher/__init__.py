@@ -15,7 +15,7 @@ Public API:
     filter_listings(...)             -> list[Listing]
 """
 
-__version__ = "0.0.0"
+__version__ = "0.0.1"
 
 from .api import extract_event_id, fetch_event_html, get_performer_events, parse_event, parse_listings, search_events
 from .filters import SectionMatcher, filter_listings
